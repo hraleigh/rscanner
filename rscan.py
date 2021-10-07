@@ -103,8 +103,8 @@ while xi < lenx-1:
     #check duplicates
     #alert when everything ok
 
-    if alert < 1:
-        print("Good pubKey. No problems.")
+if alert < 1:
+    print("Good pubKey. No problems.")
 
 if __name__ == '__main__':
     # https://stackoverflow.com/a/42946179
