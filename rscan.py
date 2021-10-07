@@ -85,25 +85,20 @@ def main(addr):
     alert = 0
 
     #compare the sig values in each input script
-    while xi < lenx-1:
-        x = 0
-        while x < lenx-zi: 
-            if inputs[xi][10:74] == inputs[x+zi][10:74]:
-                print(addr, file=sys.stderr)
-                print("In Input NR: " + str(xi) + "[global increment] " + str(inputs[xi]), file=sys.stderr)
-                print('\a', file=sys.stderr)
-                print("Reused R-Value: ", file=sys.stderr)
-                print(inputs[x+zi][10:74], file=sys.stderr)
-                print("TXID 1", file=sys.stderr)
-                print(hashes[x+zi], file=sys.stderr)
-                print("TXID 2", file=sys.stderr)
-                print(hashes[xi], file=sys.stderr)
-                alert += 1
+while xi < lenx-1:
+	x = 0
+	while x < lenx-zi: 
+		if inputs[xi][10:74] == inputs[x+zi][10:74]:
+			print "In Input NR: " + str(xi) + "[global increment] " + str(inputs[xi])
+			print('\a')
+                        print "Resued R-Value: "
+			print inputs[x+zi][10:74]
+                        alert += 1
 
-            x += 1
-
-        zi += 1
-        xi += 1
+		x += 1
+		
+	zi += 1
+	xi += 1
 
     #check duplicates
     #alert when everything ok
